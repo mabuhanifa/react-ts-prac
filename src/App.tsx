@@ -6,6 +6,7 @@ import PersonList from './components/PersonList'
 import StringLiterals from './components/StringLiterals'
 import Styles from './components/Styles'
 import TypedProps from './components/TypedProps'
+import UseState from './HooksComponents/UseState'
 
 function App() {
   const person = {
@@ -41,6 +42,7 @@ function App() {
       <Button handleClick={handleClick}> Click</Button>
       {/* <Input handleClick={(e) => console.log(e)} value="" /> */}
       <Styles styles={{ "margin": "100px" }} />
+      <UseState />
     </div>
   )
 }
