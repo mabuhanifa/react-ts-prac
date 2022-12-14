@@ -1,4 +1,5 @@
 import './App.css'
+import Button from './components/Button'
 import Greet from './components/Greet'
 import Heading from './components/Heading'
 import PersonList from './components/PersonList'
@@ -24,7 +25,9 @@ function App() {
       last: "Khan"
     }
   ]
-
+  const handleClick = () => {
+    alert("Clicked")
+  }
   return (
     <div>
       <Heading>
@@ -34,6 +37,7 @@ function App() {
       <TypedProps message={"hi there"} name="Shourov" person={person} />
       <PersonList personList={personList} person={person} />
       <StringLiterals status="failed" />
+      <Button handleClick={handleClick}> Click</Button>
     </div>
   )
 }

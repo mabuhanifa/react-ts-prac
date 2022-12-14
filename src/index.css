@@ -14,3 +14,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+button {
+  padding: 10px 20px;
+  background-color: rgb(73, 73, 255);
+  outline: none;
+  border: none;
+  border-radius: 0.25em;
+}
