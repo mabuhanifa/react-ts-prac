@@ -2,9 +2,9 @@ import './App.css'
 import Button from './components/Button'
 import Greet from './components/Greet'
 import Heading from './components/Heading'
-import Input from './components/Input'
 import PersonList from './components/PersonList'
 import StringLiterals from './components/StringLiterals'
+import Styles from './components/Styles'
 import TypedProps from './components/TypedProps'
 
 function App() {
@@ -39,7 +39,8 @@ function App() {
       <PersonList personList={personList} person={person} />
       <StringLiterals status="failed" />
       <Button handleClick={handleClick}> Click</Button>
-      <Input handleClick={(e) => console.log(e)} value="" />
+      {/* <Input handleClick={(e) => console.log(e)} value="" /> */}
+      <Styles styles={{ "margin": "100px" }} />
     </div>
   )
 }
