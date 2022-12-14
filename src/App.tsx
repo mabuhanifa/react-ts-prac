@@ -27,7 +27,7 @@ function App() {
     <div>
       <Greet message={"hi there"} name="Shourov" />
       <TypedProps message={"hi there"} name="Shourov" person={person} />
-      <PersonList {...personList} />
+      <PersonList personList={personList} />
     </div>
   )
 }
