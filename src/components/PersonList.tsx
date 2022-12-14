@@ -1,8 +1,14 @@
-type Person = {
+type PersonLists = {
     first: string;
     last: string;
 }[]
-export default function PersonList({ personList }: { personList: Person }) {
+interface Person {
+    name: string;
+    age: number;
+}
+export default function PersonList({ personList, person }: {
+    personList: PersonLists; person: Person
+}) {
 
     return (
         <div>{
@@ -14,6 +20,11 @@ export default function PersonList({ personList }: { personList: Person }) {
             ))
 
 
-        }</div>
+        }
+            {
+                person.name
+            }
+
+        </div>
     )
 }
