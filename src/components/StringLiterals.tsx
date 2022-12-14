@@ -1,6 +1,9 @@
+type Literals = { status: "loading" | "success" | "failed" };
+export default function StringLiterals({ status }: Literals) {
 
-export default function StringLiterals() {
     return (
-        <div>StringLiterals</div>
+        <div>{
+            status
+        }</div>
     )
 }
