@@ -1,6 +1,6 @@
 
-export default function Greet({ message }: { message: string }) {
+export default function Greet({ message, name }: { message: string; name: string }) {
     return (
-        <div>{message}</div>
+        <div>{message} {" "}{name}</div>
     )
 }
