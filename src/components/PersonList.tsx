@@ -1,11 +1,5 @@
-type PersonLists = {
-    first: string;
-    last: string;
-}[]
-interface Person {
-    name: string;
-    age: number;
-}
+import { Person, PersonLists } from "../types/types";
+
 export default function PersonList({ personList, person }: {
     personList: PersonLists; person: Person
 }) {

@@ -1,8 +1,5 @@
-import { ReactNode } from "react";
-type Btn = {
-    handleClick: () => void,
-    children: ReactNode
-}
+import { Btn } from "../types/types";
+
 
 export default function Button({ handleClick, children }: Btn) {
     return (
