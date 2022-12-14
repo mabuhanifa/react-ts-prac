@@ -5,6 +5,15 @@ type Person = {
 export default function PersonList({ personList }: { personList: Person }) {
 
     return (
-        <div>PersonList</div>
+        <div>{
+
+            personList.map(({ first, last }, i) => (
+                <div key={i}>
+                    {first} {last}
+                </div>
+            ))
+
+
+        }</div>
     )
 }
