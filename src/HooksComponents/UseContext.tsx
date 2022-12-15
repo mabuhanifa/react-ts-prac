@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useReducer } from "react";
+import { createContext, ReactNode, useContext, useReducer } from "react";
 import { initialState, stateReducer } from "./UseReducer";
 
 const AppContext = createContext({});
@@ -15,4 +15,8 @@ export default function UseContext({ children }: { children: ReactNode }) {
             }
         </AppContext.Provider>
     )
+}
+
+export function useApp() {
+    return useContext(AppContext);
 }
