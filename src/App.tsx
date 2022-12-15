@@ -32,7 +32,7 @@ function App() {
     alert("Clicked")
   }
   return (
-    <div>
+    <div style={{ "margin": "50px" }}>
       <Heading>
         Heading
       </Heading>

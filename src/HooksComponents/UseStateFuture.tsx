@@ -9,6 +9,7 @@ const userinfo = {
 }
 export default function UseStateFuture() {
     const [user, setUser] = useState<User | null>(null);
+    //  const [user, setUser] = useState<User>({} as User);
     const handleLogin = () => {
         setUser(userinfo)
     }
