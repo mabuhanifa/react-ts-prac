@@ -35,6 +35,22 @@ export default function UseReducer() {
     const [state, dispatch] = useReducer(stateReducer, initialState);
 
     return (
-        <div>UseReducer</div>
+        <div>
+            <h2>{state.counter}</h2>
+
+            <br />
+            <button
+                onClick={() => dispatch({
+                    type: "ADD",
+                    payload: 1
+                })}>+</button>
+
+            <br />
+            <button
+                onClick={() => dispatch({
+                    type: "REMOVE",
+                    payload: 1
+                })}>-</button>
+        </div>
     )
 }
