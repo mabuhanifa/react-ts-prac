@@ -1,16 +1,17 @@
+import { useApp } from "./UseContext";
 
 type CounterAction = {
     type: "ADD" | "REMOVE", payload: number
 }
 type CartAction = { type: "LOAD", payload: Product };
 
-type Action = CounterAction | CartAction;
+export type Action = CounterAction | CartAction;
 
 type Product = {
     name: string,
     id: number
 }
-type State = {
+export type State = {
     counter: number;
     products: Product[];
     // cart: Product[];
@@ -47,7 +48,7 @@ export function stateReducer(state: State, action: Action) {
 
 
 export default function UseReducer() {
-
+    const { state, dispatch } = useApp();
     console.log(state)
     return (
         <div>
