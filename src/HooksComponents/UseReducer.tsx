@@ -1,4 +1,3 @@
-import { useReducer } from "react";
 
 type CounterAction = {
     type: "ADD" | "REMOVE", payload: number
@@ -16,7 +15,7 @@ type State = {
     products: Product[];
     // cart: Product[];
 }
-const initialState: State = {
+export const initialState: State = {
     counter: 0,
     products: [],
     // cart: [],
@@ -26,7 +25,7 @@ const product = {
     id: initialState.products.length + 1
 }
 
-function stateReducer(state: State, action: Action) {
+export function stateReducer(state: State, action: Action) {
     switch (action.type) {
         case "ADD":
             return {
@@ -48,7 +47,7 @@ function stateReducer(state: State, action: Action) {
 
 
 export default function UseReducer() {
-    const [state, dispatch] = useReducer(stateReducer, initialState);
+
     console.log(state)
     return (
         <div>

@@ -1,6 +1,18 @@
+import { createContext, ReactNode, useReducer } from "react";
+import { initialState, stateReducer } from "./UseReducer";
 
-export default function UseContext() {
+const AppContext = createContext({});
+
+export default function UseContext({ children }: { children: ReactNode }) {
+    const [state, dispatch] = useReducer(stateReducer, initialState);
+    const main = {
+        state, dispatch
+    }
     return (
-        <div>UseContext</div>
+        <AppContext.Provider value={main}>
+            {
+                children
+            }
+        </AppContext.Provider>
     )
 }
