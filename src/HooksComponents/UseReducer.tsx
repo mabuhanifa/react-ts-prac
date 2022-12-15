@@ -18,12 +18,21 @@ const initialState = {
 
 
 function stateReducer(state: State, action: Action) {
-
+    switch (action.type) {
+        case "ADD":
+            return {
+                counter: state.counter + action.payload
+            }
+        case "REMOVE":
+            return {
+                counter: state.counter - action.payload
+            }
+    }
 }
 
 
 export default function UseReducer() {
-    const [state, dispatch] = useReducer(stateReducer, initialState)
+    const [state, dispatch] = useReducer(stateReducer, initialState);
 
     return (
         <div>UseReducer</div>
