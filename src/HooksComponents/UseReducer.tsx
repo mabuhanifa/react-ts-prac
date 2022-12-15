@@ -1,5 +1,11 @@
 import { useReducer } from "react";
-type Action = { type: "ADD" | "REMOVE", payload: number };
+
+type CounterAction = {
+    type: "ADD" | "REMOVE", payload: number
+}
+type CartAction = { type: "LOAD", payload: Product };
+
+type Action = CounterAction | CartAction;
 
 type Product = {
     name: string,
@@ -7,25 +13,35 @@ type Product = {
 }
 type State = {
     counter: number;
-    // products: Product[];
+    products: Product[];
     // cart: Product[];
 }
-const initialState = {
+const initialState: State = {
     counter: 0,
-    // products: [],
+    products: [],
     // cart: [],
 }
-
+const product = {
+    name: "Product",
+    id: initialState.products.length + 1
+}
 
 function stateReducer(state: State, action: Action) {
     switch (action.type) {
         case "ADD":
             return {
+                ...state,
                 counter: state.counter + action.payload
             }
         case "REMOVE":
             return {
+                ...state,
                 counter: state.counter - action.payload
+            }
+        case "LOAD":
+            return {
+                ...state,
+                products: [...state.products, action.payload]
             }
     }
 }
@@ -33,7 +49,7 @@ function stateReducer(state: State, action: Action) {
 
 export default function UseReducer() {
     const [state, dispatch] = useReducer(stateReducer, initialState);
-
+    console.log(state)
     return (
         <div>
             <h2>{state.counter}</h2>
@@ -50,6 +66,12 @@ export default function UseReducer() {
                 onClick={() => dispatch({
                     type: "REMOVE",
                     payload: 1
+                })}>-</button>
+            <br />
+            <button
+                onClick={() => dispatch({
+                    type: "LOAD",
+                    payload: product
                 })}>-</button>
         </div>
     )
