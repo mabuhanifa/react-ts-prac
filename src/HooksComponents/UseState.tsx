@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useApp } from "./UseContext";
 
 export default function UseState() {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const { state, dispatch } = useApp();
     const handleLogin = () => {
         setIsLoggedIn(true)
     }

@@ -48,8 +48,8 @@ export function stateReducer(state: State, action: Action) {
 
 
 export default function UseReducer() {
-    const { state, dispatch } = useApp();
 
+    const { state, dispatch } = useApp();
     return (
         <div>
             <h2>{state.counter}</h2>

@@ -6,6 +6,7 @@ import PersonList from './components/PersonList'
 import StringLiterals from './components/StringLiterals'
 import Styles from './components/Styles'
 import TypedProps from './components/TypedProps'
+import User from './HooksComponents/User'
 import UseReducer from './HooksComponents/UseReducer'
 import UseState from './HooksComponents/UseState'
 import UseStateFuture from './HooksComponents/UseStateFuture'
@@ -47,6 +48,7 @@ function App() {
       <UseState />
       <UseStateFuture />
       <UseReducer />
+      <User />
     </div>
   )
 }
