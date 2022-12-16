@@ -3,8 +3,15 @@ import { useUser } from "./UserContext";
 export default function User() {
     const { user, setUser } = useUser();
     console.log(user, setUser);
-    const handleLogIn = () => { }
-    const handleLogOut = () => { }
+    const handleLogIn = () => {
+        setUser({
+            name: "Shourov",
+            email: "shourov@gmail.com"
+        })
+    }
+    const handleLogOut = () => {
+        setUser(null)
+    }
     return (
         <div>
             <div>
@@ -12,8 +19,8 @@ export default function User() {
                 <button onClick={handleLogOut}>Log Out</button>
             </div>
             <div>
-                <h2>User Name is</h2>
-                <h2>User Name is</h2>
+                <h2>User Name is {user?.name}</h2>
+                <h2>User Name is {user?.email}</h2>
             </div>
         </div>
     )

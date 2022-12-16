@@ -10,7 +10,7 @@ type UserContextType = { user: (AuthUser | null), setUser: React.Dispatch<React.
 export const UserContext = createContext({} as UserContextType);
 
 export const UserContextProvider = ({ children }: { children: ReactNode }) => {
-    const [user, setUser] = useState<null | AuthUser>({ name: "", email: "" });
+    const [user, setUser] = useState<null | AuthUser>({} as AuthUser);
     const context = { user, setUser };
     return <UserContext.Provider value={context}>
         {
