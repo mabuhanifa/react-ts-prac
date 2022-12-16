@@ -2,7 +2,6 @@ import { useUser } from "./UserContext";
 
 export default function User() {
     const { user, setUser } = useUser();
-    console.log(user, setUser);
     const handleLogIn = () => {
         setUser({
             name: "Shourov",
