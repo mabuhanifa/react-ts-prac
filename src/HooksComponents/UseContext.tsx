@@ -1,10 +1,7 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
-import { Action, initialState, State, stateReducer } from "./UseReducer";
+import { MainState } from "../types/types";
+import { initialState, stateReducer } from "./UseReducer";
 
-type MainState = {
-    state: State,
-    dispatch: React.Dispatch<Action>
-}
 const AppContext = createContext({} as MainState);
 
 export default function UseContext({ children }: { children: ReactNode }) {

@@ -1,21 +1,6 @@
+import { Action, State } from "../types/types";
 import { useApp } from "./UseContext";
 
-type CounterAction = {
-    type: "ADD" | "REMOVE", payload: number
-}
-type CartAction = { type: "LOAD", payload: Product };
-
-export type Action = CounterAction | CartAction;
-
-type Product = {
-    name: string,
-    id: number
-}
-export type State = {
-    counter: number;
-    products: Product[];
-    // cart: Product[];
-}
 export const initialState: State = {
     counter: 0,
     products: [],
